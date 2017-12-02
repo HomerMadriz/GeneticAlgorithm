@@ -14,7 +14,7 @@ public class DoubleArrayPhenotype extends DoublePhenotype {
 		this.array      = new double[length];
 		this.minValue   = min;
 		this.maxValue   = max;
-		this.valuesList = new ArrayList<Double>(length);
+		this.valuesList = new ArrayList<Double>(length); 
 		for(int i = 0; i < length; i ++) this.valuesList.add(0.0);
 	}
 	 

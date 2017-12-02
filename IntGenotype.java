@@ -1,4 +1,6 @@
-package org.gava;
+package lcll.org.gava;
+
+import org.gava.Genotype;
 
 public abstract class IntGenotype extends Genotype<Integer> {
 	

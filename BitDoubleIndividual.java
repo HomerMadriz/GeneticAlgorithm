@@ -17,7 +17,7 @@ public class BitDoubleIndividual extends Individual<Boolean, Double> {
 		for(int v = 0, g = 0; v < super.phenotype.length(); v ++) {
 			BigDecimal sum  = new BigDecimal("0");
 			BigDecimal acc  = new BigDecimal("1"); 
-			for( ; g < (v + 1) * bitsPerValue; g ++) {
+			for( ; g < (v + 1) * bitsPerValue; g ++) { 
 				if(super.genotype.getGene(g)) sum = sum.add(acc);
 				acc = acc.multiply(base);
 			}			

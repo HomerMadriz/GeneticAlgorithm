@@ -1,6 +1,11 @@
-package org.gava;
+package lcll.org.gava;
 
 import java.util.List;
+
+import org.gava.Genotype;
+import org.gava.Individual;
+import org.gava.ObjectiveFunction;
+import org.gava.Phenotype;
 
 public class RouteIndividual extends Individual<Integer, Integer> {
 	
@@ -12,7 +17,7 @@ public class RouteIndividual extends Individual<Integer, Integer> {
 
 	@Override
 	public void updatePhenotype() {
-		for(int i = 0; i< super.genotype.length(); i++) {
+		for(int i = 0; i < super.genotype.length(); i++) {
 			super.phenotype.setValue(i, super.genotype.getGene(i));
 		}
 	}
@@ -20,7 +25,7 @@ public class RouteIndividual extends Individual<Integer, Integer> {
 	@Override
 	public Individual<Integer, Integer> clone() {
 		Individual<Integer, Integer> clone = new RouteIndividual(super.genotype.clone(), super.phenotype.clone());
-		clone.fitness = this.fitness;
+		clone.setFitness(this.fitness);
 		return clone;
 	}
 
@@ -31,8 +36,9 @@ public class RouteIndividual extends Individual<Integer, Integer> {
 
 	@Override
 	public double normalize(ObjectiveFunction<Integer> objectiveFunction) {
-		// TODO Auto-generated method stub
-		return 0;
+		double distance = objectiveFunction.function(this.getPhenotype());	
+		RouteFunction routeFunction = (RouteFunction) objectiveFunction;
+		return 1 - (distance/(routeFunction.getMaxWeight() * routeFunction.length()));
 	}
 
 	

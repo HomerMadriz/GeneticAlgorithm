@@ -28,7 +28,7 @@ public class RouletteSelector<G ,P> implements Selector<G, P> {
 			expectedValues[i] = individual.getFitness() / fitnessSum;
 		}
 		
-		newPopulation.add(oldPopulation.get(bestIndividual).clone());
+		newPopulation.add(oldPopulation.get(bestIndividual).clone()); 
 		for(int i = 1; i < N; i ++) {
 			double rnd = Math.random();
 			double evSum = 0;

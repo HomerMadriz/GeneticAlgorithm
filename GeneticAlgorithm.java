@@ -100,7 +100,7 @@ public class GeneticAlgorithm<G, P> {
 	}
 
 	public void run() {
-		if(this.objectiveFunction == null) throw new MissingStageException("Objective function is not specified");
+		if(this.objectiveFunction == null) throw new MissingStageException("Objective function is not specified"); 
 		if(this.individualFactory == null) throw new MissingStageException("Individual factory is not specified");
 		if(this.selector  == null) throw new MissingStageException("Selector method is not specified");
 		if(this.crossover == null) throw new MissingStageException("Crossover method is not specified");
@@ -114,7 +114,7 @@ public class GeneticAlgorithm<G, P> {
 			crossover(bestIndividualIndex);
 			mutation(bestIndividualIndex);
 		}
-	}
+	} 
 	
 	public List<P> getBest() {
 		if(bestIndividualIndex == -1) return null;

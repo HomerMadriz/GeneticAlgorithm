@@ -1,6 +1,8 @@
-package org.gava;
+package lcll.org.gava;
 
 import java.util.Random;
+
+import org.gava.Genotype;
 
 public class RouteGenotype extends IntGenotype {
 
@@ -8,8 +10,8 @@ public class RouteGenotype extends IntGenotype {
 	private int length;
 	 
 	public RouteGenotype(int length) {
-		this.length = length;
-		this.chromosome = new int[length];
+		this.length = length + 1;
+		this.chromosome = new int[this.length];
 	}
 	
 	@Override
@@ -54,7 +56,7 @@ public class RouteGenotype extends IntGenotype {
 
 	@Override
 	public Genotype<Integer> clone() {
-		RouteGenotype clone = new RouteGenotype(this.length);
+		RouteGenotype clone = new RouteGenotype(this.length - 1);
 		clone.chromosome = this.chromosome.clone();
 		return clone;
 	}

@@ -1,6 +1,9 @@
-package org.gava;
+package lcll.org.gava;
 
 import java.util.Random;
+
+import org.gava.Crossover;
+import org.gava.Genotype;
 
 public class OrderCrossover extends Crossover<Integer> {
 	
@@ -8,7 +11,7 @@ public class OrderCrossover extends Crossover<Integer> {
 	
 	private Random random = new Random();
 	
-	 
+	  
 	@Override
 	public void cross(Genotype<Integer> genotypePadre, Genotype<Integer> genotypeMadre) {
 		int index1 = random.nextInt(genotypePadre.length() - 2) + 1;
@@ -32,7 +35,7 @@ public class OrderCrossover extends Crossover<Integer> {
 			madre[i] = genotypeMadre.getGene(i);
 			padre[i] = genotypePadre.getGene(i);
 		}
-		
+		 
 		Crossover(genotypeMadre, padre, madre, index1, index2);
 		Crossover(genotypePadre, madre, padre, index1, index2);
 		

@@ -1,16 +1,17 @@
-package org.gava;
+package lcll.org.gava;
+
+import org.gava.Genotype;
+import org.gava.Individual;
+import org.gava.IndividualFactory;
+import org.gava.Phenotype;
 
 public class RouteIndividualFactory extends IndividualFactory<Integer, Integer> {
 	
 	private int length; 
-	private int maxWeight;
-	private int nodeNumb; //temporary
 	
 	
-	public RouteIndividualFactory(int length, int maxWeight, int nodeNumb) {
+	public RouteIndividualFactory(int length) {
 		this.length = length;
-		this.maxWeight = maxWeight;
-		this.nodeNumb = nodeNumb;
 	}
 	
 	@Override
@@ -18,7 +19,6 @@ public class RouteIndividualFactory extends IndividualFactory<Integer, Integer> 
 		Genotype<Integer> genotype = new RouteGenotype(this.length);
 		Phenotype<Integer> phenotype = new RoutePhenotype(this.length);
 		genotype.randomize();
-	
 		RouteIndividual individual = new RouteIndividual(genotype, phenotype);
 		return individual;
 	}

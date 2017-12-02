@@ -11,7 +11,7 @@ public class RastriginFunction implements ObjectiveFunction<Double> {
 	
 	private RastriginFunction() {
 	
-	}
+	} 
 	
 	@Override
 	public int length() { 

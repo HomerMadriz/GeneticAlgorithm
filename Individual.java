@@ -2,7 +2,7 @@ package org.gava;
 
 import java.util.List;
 
-public abstract class Individual<G, P> {
+public abstract class Individual<G, P> implements Comparable<Individual<G, P>> {
 	
 	protected Genotype<G>  genotype;
 	protected Phenotype<P> phenotype;
@@ -17,7 +17,7 @@ public abstract class Individual<G, P> {
 	public Individual(Genotype<G> genotype, Phenotype<P> phenotype) {
 		this.genotype  = genotype;
 		this.phenotype = phenotype;
-		updatePhenotype();
+		updatePhenotype(); 
 	}
 	
 	public void setFitness(double fitness) {
@@ -26,6 +26,14 @@ public abstract class Individual<G, P> {
 	
 	public double getFitness() {
 		return this.fitness;
+	}
+	
+	public int compareTo(Individual<G, P> individual2) {
+		if(this.fitness < individual2.getFitness())
+			return -1;
+		if(this.fitness > individual2.getFitness())
+			return 1;
+		return 0;
 	}
 
 }

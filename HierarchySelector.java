@@ -1,14 +1,19 @@
-/*package org.gava;
+package lcll.org.gava;
 
+import java.util.Collections;
 import java.util.List;
 
-public class HierarchySelector implements Selector<G, P> {
+import org.gava.Individual;
+import org.gava.RouletteSelector;
+import org.gava.Selector;
+
+public class HierarchySelector<G,P> implements Selector<G, P> {
 
 	@Override
 	public List<Individual<G, P>> select(List<Individual<G, P>> population) {
-		// TODO Auto-generated method stub
-		return null;
+		RouletteSelector<G, P> roulette = new RouletteSelector<>();
+		Collections.sort(population);
+		return roulette.select(population);
 	}
 
 }
-*/

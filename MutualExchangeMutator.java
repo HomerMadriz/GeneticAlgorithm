@@ -1,6 +1,9 @@
-package org.gava;
+package lcll.org.gava;
 
 import java.util.Random;
+
+import org.gava.Genotype;
+import org.gava.Mutator; 
 
 public class MutualExchangeMutator extends Mutator<Integer> {
 
@@ -9,12 +12,12 @@ public class MutualExchangeMutator extends Mutator<Integer> {
 	
 	@Override
 	public void mutate(Genotype<Integer> genotype) {
-		int index1 = random.nextInt(genotype.length());
+		int index1 = random.nextInt((genotype.length() - 2))+ 1; 
 		int index2;
 		int tmp;
 		
 		do {
-		index2 = random.nextInt(genotype.length());
+		index2 = random.nextInt(genotype.length() - 2) + 1;
 		}while(index1 == index2);
 		
 		tmp = genotype.getGene(index1);

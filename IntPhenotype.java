@@ -1,4 +1,6 @@
-package org.gava;
+package lcll.org.gava;
+
+import org.gava.Phenotype;
 
 public abstract class IntPhenotype extends Phenotype<Integer> {
 	@Override
