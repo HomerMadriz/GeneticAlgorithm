@@ -10,16 +10,16 @@ public class RastriginFunction implements ObjectiveFunction<Double> {
 	private static RastriginFunction instance = null;
 	
 	private RastriginFunction() {
-		
+	
 	}
 	
 	@Override
-	public int length() {
+	public int length() { 
 		return 2;
 	}
 
 	@Override
-	public double f(List<Double> args) {
+	public Double function(List<Double> args) {
 		double x1 = args.get(0);
 		double x2 = args.get(1);
 		return 20 + (x1 * x1) + (x2 * x2) - 10 * (cos(2 * PI * x1) + cos(2 * PI * x2));

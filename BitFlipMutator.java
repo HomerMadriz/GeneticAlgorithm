@@ -8,7 +8,7 @@ public class BitFlipMutator extends Mutator<Boolean> {
 	
 	private Random random = new Random();
 
-	private BitFlipMutator() {
+	private BitFlipMutator() { 
 		
 	}
 	

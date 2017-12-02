@@ -12,7 +12,7 @@ public class GeneticAlgorithm<G, P> {
 	private ObjectiveFunction<P> objectiveFunction = null;
 
 	private List<Individual<G, P>> population = null;
-	private int populationSize = 0;
+	private int populationSize = 0; 
 	private int generations = 0;
 	private int bestIndividualIndex = -1;
 
@@ -49,15 +49,14 @@ public class GeneticAlgorithm<G, P> {
 	public void selection(int best) {
 		this.population = selector.select(this.population);
 	}
-
+	
 	public int updateFitness() {
 		int bestIndividual = -1;
 		double bestFitness = -1;
 		int i;
 		for (i = 0; i < this.populationSize; i++) {
 			Individual<G, P> individual = this.population.get(i);
-			double result = this.objectiveFunction.f(individual.getPhenotype());
-			double f = 1.0 / (result + 1.0);
+			double f = individual.normalize(this.objectiveFunction);
 			individual.setFitness(f);
 			if(f > bestFitness) {
 				bestFitness = f;
@@ -65,7 +64,7 @@ public class GeneticAlgorithm<G, P> {
 			}
 		}
 		return bestIndividual;
-	}
+	} 
 	
 	public void crossover(int best) {
 		for (int i = 0; i < this.populationSize; i += 2) {

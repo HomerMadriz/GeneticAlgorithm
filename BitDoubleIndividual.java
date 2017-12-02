@@ -8,7 +8,7 @@ public class BitDoubleIndividual extends Individual<Boolean, Double> {
 	public BitDoubleIndividual(Genotype<Boolean> bitGenotype, Phenotype<Double> dblPhenotype) {
 		super(bitGenotype, dblPhenotype);
 	}
-	
+	 
 	@Override
 	public void updatePhenotype() {
 		final int bitsPerValue    = super.genotype.length() / super.phenotype.length();
@@ -22,7 +22,7 @@ public class BitDoubleIndividual extends Individual<Boolean, Double> {
 				acc = acc.multiply(base);
 			}			
 			double normalized = sum.divide(maxValue, 16, BigDecimal.ROUND_HALF_UP).doubleValue();
-			super.phenotype.setValue(v, phenotype.getMinValue() + normalized * (phenotype.getMaxValue() - phenotype.getMinValue()));
+			super.phenotype.setValue(v, phenotype.getMinValue(v) + normalized * (phenotype.getMaxValue(v) - phenotype.getMinValue(v)));
 		}
 	}
 	
@@ -48,6 +48,12 @@ public class BitDoubleIndividual extends Individual<Boolean, Double> {
 	
 	public List<Double> getPhenotype() {
 		return this.phenotype.asList();
+	}
+
+	@Override
+	public double normalize(ObjectiveFunction<Double> objectiveFunction) {
+		double result = objectiveFunction.function(this.getPhenotype());
+		return 1.0 / (result + 1) ;
 	}
 	
 }

@@ -12,6 +12,7 @@ public abstract class Individual<G, P> {
 	public abstract void updatePhenotype();
 	public abstract Individual<G, P> clone();
 	public abstract List<P> getPhenotype();	
+	public abstract double normalize(ObjectiveFunction<P> objectiveFunction);
 	
 	public Individual(Genotype<G> genotype, Phenotype<P> phenotype) {
 		this.genotype  = genotype;
@@ -26,5 +27,5 @@ public abstract class Individual<G, P> {
 	public double getFitness() {
 		return this.fitness;
 	}
-	
+
 }

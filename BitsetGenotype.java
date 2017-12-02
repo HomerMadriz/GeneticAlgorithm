@@ -4,7 +4,7 @@ import java.util.BitSet;
 import java.util.Random;
 
 public class BitsetGenotype extends BitGenotype {
-
+  
 	private BitSet chromosome = null;
 	private final  int length;
 	

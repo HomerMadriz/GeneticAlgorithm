@@ -6,18 +6,18 @@ import java.util.List;
 public class DoubleArrayPhenotype extends DoublePhenotype {
 
 	private double[] array;
-	private double minValue;
-	private double maxValue;
+	private double[] minValue;
+	private double[] maxValue; 
 	private List<Double> valuesList = null;
 	
-	public DoubleArrayPhenotype(int length, double min, double max) {
+	public DoubleArrayPhenotype(int length, double[] min, double[] max) {
 		this.array      = new double[length];
 		this.minValue   = min;
 		this.maxValue   = max;
 		this.valuesList = new ArrayList<Double>(length);
 		for(int i = 0; i < length; i ++) this.valuesList.add(0.0);
 	}
-	
+	 
 	@Override
 	public void setValue(int index, Double value) {
 		this.array[index] = value;
@@ -35,13 +35,13 @@ public class DoubleArrayPhenotype extends DoublePhenotype {
 	}
 
 	@Override
-	public Double getMinValue() {
-		return this.minValue;
+	public Double getMinValue(int index) {
+		return this.minValue[index];
 	}
 
 	@Override
-	public Double getMaxValue() { 
-		return this.maxValue;
+	public Double getMaxValue(int index) { 
+		return this.maxValue[index];
 	}
 
 	@Override

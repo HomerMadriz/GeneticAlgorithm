@@ -5,6 +5,6 @@ import java.util.List;
 public interface ObjectiveFunction<P> {
 
 	int length();
-	double f(List<P> args);
+	P function(List<P> args);
 	
 }

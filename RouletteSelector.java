@@ -9,7 +9,7 @@ public class RouletteSelector<G ,P> implements Selector<G, P> {
 	public List<Individual<G, P>> select(List<Individual<G, P>> oldPopulation) {
 		final int N = oldPopulation.size();
 		List<Individual<G, P>> newPopulation = new ArrayList<Individual<G, P>>(N);
-		double[] expectedValues = new double[N];
+		double[] expectedValues = new double[N]; 
 		double fitnessSum = 0;
 		double maxFitness = 0;
 		int    bestIndividual = -1;
