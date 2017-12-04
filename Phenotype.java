@@ -2,6 +2,14 @@ package org.gava;
 
 import java.util.List;
 
+/**
+ * Clase abstracta y genérica que define los métodos necesarios para la construcción de un fenotipo 
+ * útil en algoritmos genéticos.
+ * 
+ * @author Hugo Iván Piza Dávila
+ * @param <T> Type
+ */
+
 public abstract class Phenotype<T> { 
 	
 	public abstract void setValue(int index, T value);
