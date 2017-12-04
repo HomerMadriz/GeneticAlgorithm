@@ -35,7 +35,8 @@ public class RouteIndividual extends Individual<Integer, Integer> {
 	}
 
 	@Override
-	public double normalize(ObjectiveFunction<Integer> objectiveFunction) {
+	public double normalize(ObjectiveFunction<Integer> objectiveFunction)throws NotRouteFunctionException {
+		if (!(objectiveFunction instanceof RouteFunction)) throw new NotRouteFunctionException();
 		double distance = objectiveFunction.function(this.getPhenotype());	
 		RouteFunction routeFunction = (RouteFunction) objectiveFunction;
 		return 1 - (distance/(routeFunction.getMaxWeight() * routeFunction.length()));
