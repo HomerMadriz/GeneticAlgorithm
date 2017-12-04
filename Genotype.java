@@ -4,7 +4,7 @@ package org.gava;
  * útil en algoritmos genéticos.
  * 
  * @author Hugo Iván Piza Dávila
- * * @param <T> Type
+ * @param <T> Type
  */
 public abstract class Genotype<T> {
 

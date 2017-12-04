@@ -32,7 +32,7 @@ public class RoutePhenotype extends IntPhenotype {
  * 
  * Además se crea una Lista ya que en ciertos procesos del algoritmo se necesitará la representación en List del fenotipo, esta lista será inicializada
  * por defecto en cero. 
- * @param length
+ * @param length Tamaño del arreglo propio del fenotipo.
  */
 	public RoutePhenotype(int length) {
 		this.length = length + 1;
@@ -43,8 +43,8 @@ public class RoutePhenotype extends IntPhenotype {
 
 	/**
 	 * Modifica los valores del arreglo y de la lista en el indice especificado. 
-	 * @param index
-	 * @param value
+	 * @param index Indice de la posición del arreglo que se desea modificar.
+	 * @param value Nuevo valor.
 	 */
 	@Override
 	public void setValue(int index, Integer value) {
@@ -55,7 +55,7 @@ public class RoutePhenotype extends IntPhenotype {
 
 	/**
 	 * Regresa el valor de la posición del arreglo especificada por el indice. 
-	 * @param index
+	 * @param index Indice de la posición del arreglo que se desea consultar.
 	 */
 	@Override
 	public Integer getValue(int index) {
