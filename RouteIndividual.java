@@ -7,10 +7,19 @@ import org.gava.Individual;
 import org.gava.ObjectiveFunction;
 import org.gava.Phenotype;
 
+/** Esta clase extiende la clase Individual para las caracteristicas especificas de RouteIndividual, que describen
+ * los individuos que representan una ruta a tomar como un arreglo de número enteros.
+ * @author Mariana Chavez, Omar Madriz, José Luis Torrentera
+ *
+ */
 public class RouteIndividual extends Individual<Integer, Integer> {
 	
 	
 
+	/** Constructor de RouteIndividual
+	 * @param genotype Genotipo
+	 * @param phenotype Fenotipo
+	 */
 	public RouteIndividual(Genotype<Integer> genotype, Phenotype<Integer> phenotype) {
 		super(genotype, phenotype);
 	}
@@ -29,6 +38,7 @@ public class RouteIndividual extends Individual<Integer, Integer> {
 		return clone;
 	}
 
+	
 	@Override
 	public List<Integer> getPhenotype() {
 		return this.phenotype.asList();
