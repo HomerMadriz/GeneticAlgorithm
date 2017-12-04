@@ -5,6 +5,10 @@ import java.util.List;
 
 public class RouletteSelector<G ,P> implements Selector<G, P> {
 
+
+	/**
+	 * Selección por Ruleta. 
+	 */
 	@Override
 	public List<Individual<G, P>> select(List<Individual<G, P>> oldPopulation) {
 		final int N = oldPopulation.size();
@@ -27,7 +31,7 @@ public class RouletteSelector<G ,P> implements Selector<G, P> {
 			Individual<G, P> individual = oldPopulation.get(i);
 			expectedValues[i] = individual.getFitness() / fitnessSum;
 		}
-		
+
 		newPopulation.add(oldPopulation.get(bestIndividual).clone()); 
 		for(int i = 1; i < N; i ++) {
 			double rnd = Math.random();
